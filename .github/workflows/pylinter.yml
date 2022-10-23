@@ -17,7 +17,7 @@ jobs:
       run: echo "The name of the branch is ${{ github.ref }} in repository ${{ github.repository }}"
     - name: Check out repository code
       uses: action/checkout@v2
-      run: echo "The ${{ github.repository }} has been cloned to the runner."
+    - run: echo "The ${{ github.repository }} has been cloned to the runner."
     - name: Set up Python
       uses: action/setup-python@v2
       with:
@@ -30,13 +30,13 @@ jobs:
       run: |
         python lint_test.py
     - name: Build container
-        run: |
-          echo "Building docker container..."
-          sleep 60
-          echo "Docker container built successfully"
+      run: |
+        echo "Building docker container..."
+        sleep 60
+        echo "Docker container built successfully"
     - name: Deploy
-        run: |
-          echo "Deploying to our imaginary cluster"
-          sleep 60
-          echo "App has been deployed successfully"
+      run: |
+        echo "Deploying to our imaginary cluster"
+        sleep 60
+        echo "App has been deployed successfully"
     - run: echo "This job's status is ${{ job.status }}"
