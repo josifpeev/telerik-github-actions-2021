@@ -3,9 +3,6 @@ name: Github-action-practice
 on:
   push:
     branches: [ josifpeev-patch-1 ]
-    paths:
-    - 'factorial.py'
-    - 'lint_test.py'
     
 jobs:
   integration-test:
